@@ -2,7 +2,7 @@ A fork of the great plugin [Zenroom2](https://github.com/amix/vim-zenroom2) with
 
 Here is the configuration in my `.vimrc` that plugs zenroom into Goyo:
 
-```vimscript
+```vimL
 function! s:goyo_enter()
   silent !tmux set status off
   set noshowmode
