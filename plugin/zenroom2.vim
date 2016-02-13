@@ -62,10 +62,7 @@ function! s:markdown_room()
     exec( "hi StatusLineNC " . l:highlightfgbgcolor )
 endfunction
 
-function! s:zenroom_goyo_before()
-    if !has("gui_running")
-        return
-    endif
+function! zenroom2#goyo_before()
     let is_mark_or_rst = &filetype == "markdown" || &filetype == "rst" || &filetype == "text"
 
     if is_mark_or_rst
@@ -73,10 +70,7 @@ function! s:zenroom_goyo_before()
     endif
 endfunction
 
-function! s:zenroom_goyo_after()
-    if !has("gui_running")
-        return
-    endif
+function! zenroom2#goyo_after()
     let is_mark_or_rst = &filetype == "markdown" || &filetype == "rst" || &filetype == "text"
     if is_mark_or_rst
         set linespace=0
@@ -86,5 +80,3 @@ function! s:zenroom_goyo_after()
         endif
     endif
 endfunction
-
-let g:goyo_callbacks = [ function('s:zenroom_goyo_before'), function('s:zenroom_goyo_after') ]
